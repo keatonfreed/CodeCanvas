@@ -1,0 +1,20 @@
+{
+  "name": "codecanvas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "icon": "icon.ico",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . CodeCanvas --platform=win32 --arch=x64 --icon=icon.ico --out=dist --overwrite",
+    "package:mac": "electron-packager . CodeCanvas --platform=darwin --arch=x64 --icon=icon.icns --out=dist-mac --overwrite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@electron/remote": "^2.0.10",
+    "electron": "^25.3.0",
+    "puppeteer": "^20.8.2"
+  }
+}

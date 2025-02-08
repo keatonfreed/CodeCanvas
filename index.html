@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Code Canvas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-dark text-light">
+    <nav class="topbar">
+        <div class="topbar-section">
+            <button id="new-project" class="btn btn-primary topbar-button">New</button>
+            <select id="project-select" class="form-control form-control-md" style="cursor:pointer">
+                <option selected value="ggg">Project</option>
+                <option value="hhh">Test1</option>
+                <option value="www">Test2</option>
+            </select>
+        </div>
+        <div class="topbar-section">
+            <input type="text" id="project-name" class="form-control form-control-md" placeholder="Project Name">
+        </div>
+        <div class="topbar-section">
+            <button id="delete-project" class="btn btn-danger btn-md">Delete</button>
+        </div>
+    </nav>
+    <!-- <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <h1 class="navbar-brand">CodeCanvas</h1>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="recentDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Open Recent
+                </a>
+                <div class="dropdown-menu" aria-labelledby="recentDropdown">
+                    <ul id="recent-projects"></ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <button id="import" class="btn btn-outline-light">Import</button>
+            </li>
+            <li class="nav-item">
+                <button id="save" class="btn btn-outline-light">Save</button>
+            </li>
+            <li class="nav-item">
+                <button id="remove" class="btn btn-outline-light">Remove</button>
+            </li>
+        </ul>
+    </nav> -->
+
+    <div id="editor-row" class="row">
+        <div class="col code-col">
+            <pre id="html-editor" class="code-editor"></pre>
+        </div>
+        <div class="col code-col">
+            <pre id="css-editor" class="code-editor"></pre>
+        </div>
+        <div class="col code-col">
+            <pre id="js-editor" class="code-editor"></pre>
+            <div id="preview-container">
+                <div id="iframe-wrapper">
+                    <iframe id="code-preview"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="number" id="width" class="form-control" placeholder="Width">
+        </div>
+        <div class="col">
+            <input type="number" id="height" class="form-control" placeholder="Height">
+        </div>
+        <div class="col">
+            <button onclick="generatePNG()" class="btn btn-primary btn-block">Run</button>
+        </div>
+    </div>
+    <div id="modal" class="modal align-items-center justify-content-center">
+        <div class="modal-content">
+            <img id="preview" class="preview-image img-fluid mx-auto d-block">
+            <div class="modal-buttons text-right">
+                <button id="open" class="btn btn-primary btn-block">Open in folder</button>
+                <button id="cancel" class="btn btn-secondary btn-block">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="renderer.js"></script>
+</body>
+
+</html>
