@@ -15,6 +15,7 @@
   "dependencies": {
     "@electron/remote": "^2.0.10",
     "electron": "^25.3.0",
-    "puppeteer": "^20.8.2"
+    "electron-packager": "^17.1.2",
+    "playwright": "^1.50.1"
   }
 }

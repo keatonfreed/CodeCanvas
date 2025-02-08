@@ -112,14 +112,16 @@ function deleteProject(project) {
     fs.unlinkSync(projectPath);
 }
 
-const puppeteer = require('puppeteer')
+const playwright = require('playwright')
 const path = require('path')
 
 async function capture(html, width, height, outputPath) {
-    const browser = await puppeteer.launch();
+    const browser = await playwright.chromium.launch();
     const page = await browser.newPage();
 
-    await page.setViewport({ width: parseInt(width), height: parseInt(height) });
+
+    //this is for old puppeteer, update below for playwright await page.setViewport({ width: parseInt(width), height: parseInt(height) });
+    await page.setViewportSize({ width: parseInt(width), height: parseInt(height) });
 
     // Function to convert local image paths to Base64
     function embedLocalImages(htmlContent) {

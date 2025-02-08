@@ -69,5 +69,6 @@ typings/
 # Electron
 electron-builder.yaml
 dist/
+dist-mac/
 release/
 out/
